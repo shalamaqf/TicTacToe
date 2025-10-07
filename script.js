@@ -78,6 +78,9 @@ var gameController = ( function () {
     let player1 = createPlayer("Player 1", 'X');
     let player2 = createPlayer('Player 2', 'O');
 
+    // Create a variable to store the current player
+    let currentPlayer = player1;
+
     // Create a function to get the player's input
     const getPlayerInput = function () {
         const playerInput = prompt("Choose a cell (1 - 9): ");
