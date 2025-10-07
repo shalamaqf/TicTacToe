@@ -69,3 +69,14 @@ var GameBoard = ( function () {
         updateBoard: updateBoard
     }
 })();
+
+
+
+// Create a function factory to create player object
+function createPlayer(name, mark) {
+    return {
+        name: name,
+        mark: mark,
+        score: 0,
+    };
+}
