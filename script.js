@@ -12,7 +12,19 @@ var GameBoard = ( function () {
         }
     }
 
+    const resetBoard = function () {
+        board = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+
+        displayBoard();
+
+    }
+
     return {
-        displayBoard: displayBoard
+        displayBoard: displayBoard,
+        resetBoard: resetBoard
     }
 })();
