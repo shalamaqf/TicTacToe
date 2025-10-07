@@ -74,6 +74,10 @@ var GameBoard = ( function () {
 
 // Create a module pattern to wrap the logic of game controller
 var gameController = ( function () {
+    // Create a variable to store the player object properties such as mark and score
+    let player1 = createPlayer("Player 1", 'X');
+    let player2 = createPlayer('Player 2', 'O');
+
     // Create a function to get the player's input
     const getPlayerInput = function () {
         const playerInput = prompt("Choose a cell (1 - 9): ");
