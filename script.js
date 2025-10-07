@@ -44,9 +44,28 @@ var GameBoard = ( function () {
 
     }
 
+    // Create a function to update the board current state
+    const updateBoard = function (playerMark, num) {
+        let i;
+        let j;
+        
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+                if (board[i][j] == num) {
+                    board[i][j] = playerMark;
+                    return true;
+                }
+            }
+        }
+
+        return false;
+
+    }
+
     return {
         displayBoard: displayBoard,
         resetBoard: resetBoard,
-        isCellAvail: isCellAvail
+        isCellAvail: isCellAvail,
+        updateBoard: updateBoard
     }
 })();
