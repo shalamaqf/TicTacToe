@@ -27,8 +27,26 @@ var GameBoard = ( function () {
 
     }
 
+    // Create a function to check if a cell is avail
+    const isCellAvail = function (num) {
+        let i;
+        let j;
+        
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+                if (board[i][j] == num) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+
+    }
+
     return {
         displayBoard: displayBoard,
-        resetBoard: resetBoard
+        resetBoard: resetBoard,
+        isCellAvail: isCellAvail
     }
 })();
