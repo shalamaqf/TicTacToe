@@ -80,6 +80,17 @@ var gameController = ( function () {
         return playerInput;
     }
 
+    // Create a function to check if player input is valid or not
+    const isValid = function (cell) {
+        if (GameBoard.isCellAvail(cell)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+
     return {
         getPlayerInput: getPlayerInput
     }
