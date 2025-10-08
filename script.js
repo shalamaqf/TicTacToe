@@ -62,11 +62,17 @@ var GameBoard = ( function () {
 
     }
 
+    // Create a getter for the board
+    const getBoard = function () {
+        return board.map(row => row.slice());
+    }
+
     return {
         displayBoard: displayBoard,
         resetBoard: resetBoard,
         isCellAvail: isCellAvail,
-        updateBoard: updateBoard
+        updateBoard: updateBoard,
+        getBoard: getBoard,
     }
 })();
 
