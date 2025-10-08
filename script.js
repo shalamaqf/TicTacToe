@@ -188,6 +188,15 @@ var gameController = ( function () {
         return false;
     }
 
+    // Create a function to check the winner of the game
+    const checkWinner = function () {
+        if ((checkHorizontal()) || (checkVertical()) || (checkDiagonal())){
+            return true;
+        }
+
+        return false;
+    }
+
     return {
         handleTurn: handleTurn,
         switchPlayer: switchPlayer,
