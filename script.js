@@ -97,9 +97,23 @@ var gameController = ( function () {
         }
     }
 
+    // Create a function to handle user input and the state of the board
+    const handleTurn = function () {
+        const cell = getPlayerInput();
+        
+        if (isValid(cell)){
+            GameBoard.updateBoard(currentPlayer.mark, cell);
+            GameBoard.displayBoard();
+            return true; 
+        }
+        else {
+            return false;
+        }
+    }
+
 
     return {
-        getPlayerInput: getPlayerInput
+        handleTurn: handleTurn
     }
 
     
