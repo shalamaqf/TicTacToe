@@ -137,14 +137,14 @@ var gameController = ( function () {
         }
     }
 
-    // Create a function to check player's mark in horiontal pattern on the board
+    // Create a function to check player's mark on the board in horizontal pattern
     const checkHorizontal = function () {
         const board = GameBoard.getBoard();
         let i;
 
         for (i = 0; i < 3; i++) {
-            if ((board[i][0] === 'X' || board[i][0] === 'O')
-                && (board[i][0] === board[i][1] && board[i][1] === board[i][2])) {
+            if ((board[i][0] === 'X' || board[i][0] === 'O') && 
+                (board[i][0] === board[i][1] && board[i][1] === board[i][2])) {
                     return true;
             }
         }
@@ -152,16 +152,37 @@ var gameController = ( function () {
         return false;
     }
 
-    // Create a function to check player's mark in veritcal pattern on the board
+    // Create a function to check player's mark on the board in vertical pattern
     const checkVertical = function () {
         const board = GameBoard.getBoard();
         let i;
 
         for (i = 0; i < 3; i++) {
-            if ((board[0][i] === 'X' || board[0][i] === 'O')
-                && (board[0][i] === board[1][i] && board[1][i] === board [2][i])){
+            if ((board[0][i] === 'X' || board[0][i] === 'O') && 
+                (board[0][i] === board[1][i] && board[1][i] === board [2][i])){
                     return true;
             }
+        }
+
+        return false;
+    }
+
+    // Create a function to check player's mark on the board in diagonal pattern
+    const checkDiagonal = function () {
+        const board = GameBoard.getBoard();
+       
+        // Check top left - bottom right
+        if (
+            (board[0][0] === 'X' || board[0][0] === 'O') && 
+            (board[0][0] === board[1][1] && board[1][1] ===board[2][2])) {
+                return true;
+        }
+
+        // Check right top - left bottom
+        if (
+            (board[0][2] === 'X' || board[0][2] === 'O') && 
+            (board[0][2] === board[1][1] && board[1][1] ===board[2][0])) {
+                return true;
         }
 
         return false;
