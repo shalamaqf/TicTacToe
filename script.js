@@ -111,6 +111,11 @@ var gameController = ( function () {
         }
     }
 
+    // Create a getter for current player
+    const getCurrentPlayer = function () {
+        return currentPlayer;
+    }
+
     // Create a function to switch the current player to play the game
     const switchPlayer = function () {
         const isSwitch = handleTurn();
@@ -128,10 +133,9 @@ var gameController = ( function () {
 
     return {
         handleTurn: handleTurn,
-        switchPlayer: switchPlayer
+        switchPlayer: switchPlayer,
+        getCurrentPlayer: getCurrentPlayer
     }
-
-    
 })();   
 
 
