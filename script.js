@@ -111,9 +111,24 @@ var gameController = ( function () {
         }
     }
 
+    // Create a function to switch the current player to play the game
+    const switchPlayer = function () {
+        const isSwitch = handleTurn();
+
+        if (isSwitch && currentPlayer === player1) {
+            currentPlayer = player2;
+        }
+        else if (isSwitch && currentPlayer === player2) {
+            currentPlayer = player1;
+        }
+        else {
+            console.log("The cell/number is not avail");
+        }
+    }
 
     return {
-        handleTurn: handleTurn
+        handleTurn: handleTurn,
+        switchPlayer: switchPlayer
     }
 
     
