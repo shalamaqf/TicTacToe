@@ -137,7 +137,7 @@ var gameController = ( function () {
         }
     }
 
-    // Create a function to check the marks pattern in horizontal way on the board
+    // Create a function to check player's mark in horiontal pattern on the board
     const checkHorizontal = function () {
         const board = GameBoard.getBoard();
         let i;
@@ -146,7 +146,22 @@ var gameController = ( function () {
             if ((board[i][0] === 'X' || board[i][0] === 'O')
                 && (board[i][0] === board[i][1] && board[i][1] === board[i][2])) {
                     return true;
-                }
+            }
+        }
+
+        return false;
+    }
+
+    // Create a function to check player's mark in veritcal pattern on the board
+    const checkVertical = function () {
+        const board = GameBoard.getBoard();
+        let i;
+
+        for (i = 0; i < 3; i++) {
+            if ((board[0][i] === 'X' || board[0][i] === 'O')
+                && (board[0][i] === board[1][i] && board[1][i] === board [2][i])){
+                    return true;
+            }
         }
 
         return false;
