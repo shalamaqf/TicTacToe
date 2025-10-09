@@ -221,6 +221,8 @@ var gameController = ( function () {
         const board = GameBoard.getBoard().flat();
 
         if (board.every(cell => cell === 'X' || cell === 'O')) {
+            GameBoard.displayBoard();
+            console("It's a draw!");
             return true;
         }
 
