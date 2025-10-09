@@ -22,9 +22,6 @@ var GameBoard = ( function () {
             [4, 5, 6],
             [7, 8, 9]
         ];
-
-        displayBoard();
-
     }
 
     // Create a function to check if a cell is avail
@@ -105,6 +102,8 @@ var gameController = ( function () {
 
     // Create a function to handle user input and the state of the board
     const handleTurn = function () {
+        GameBoard.displayBoard();
+
         const cell = getPlayerInput();
 
         if (!validateInput(cell)) {
@@ -188,7 +187,7 @@ var gameController = ( function () {
     }
 
     // Create a function to check the winner of the game
-    const checkWinner = function () {
+    const checkWin = function () {
         if ((checkHorizontal()) || (checkVertical()) || (checkDiagonal())){
             return true;
         }
@@ -198,7 +197,7 @@ var gameController = ( function () {
 
     // Create a function to declare the winner of the game
     const declareWinner = function () {
-        if (checkWinner()) {
+        if (checkWin()) {
             console.log("The winner is " + currentPlayer.name);
             return true;
         } 
