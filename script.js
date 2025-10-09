@@ -250,6 +250,5 @@ function createPlayer(name, mark) {
     return {
         name: name,
         mark: mark,
-        score: 0,
     };
 }
