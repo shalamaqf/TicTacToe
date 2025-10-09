@@ -192,6 +192,18 @@ var gameController = ( function () {
         return false;
     }
 
+    // Create a function to declare the winner of the game
+    const declareWinner = function () {
+        if (checkWinner()) {
+            console.log("The winner is " + currentPlayer.name);
+            return true;
+        } 
+        else {
+            return false;
+        }
+    }
+
+
     return {
        
     }
