@@ -124,16 +124,11 @@ var gameController = ( function () {
 
     // Create a function to switch the current player to play the game
     const switchPlayer = function () {
-        const isSwitch = handleTurn();
-
-        if (isSwitch && currentPlayer === player1) {
+        if (currentPlayer === player1) {
             currentPlayer = player2;
         }
-        else if (isSwitch && currentPlayer === player2) {
-            currentPlayer = player1;
-        }
         else {
-            console.log("The cell/number is not avail");
+            currentPlayer = player1;
         }
     }
 
@@ -198,9 +193,7 @@ var gameController = ( function () {
     }
 
     return {
-        handleTurn: handleTurn,
-        switchPlayer: switchPlayer,
-        getCurrentPlayer: getCurrentPlayer
+       
     }
 })();   
 
