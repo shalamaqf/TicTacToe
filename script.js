@@ -222,7 +222,7 @@ var gameController = ( function () {
 
         if (board.every(cell => cell === 'X' || cell === 'O')) {
             GameBoard.displayBoard();
-            console("It's a draw!");
+            console.log("It's a draw!");
             return true;
         }
 
