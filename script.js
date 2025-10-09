@@ -106,6 +106,10 @@ var gameController = ( function () {
     // Create a function to handle user input and the state of the board
     const handleTurn = function () {
         const cell = getPlayerInput();
+
+        if (!validateInput(cell)) {
+            return false;
+        }
         
         if (isValid(cell)){
             GameBoard.updateBoard(currentPlayer.mark, cell);
@@ -201,6 +205,15 @@ var gameController = ( function () {
         else {
             return false;
         }
+    }
+
+    // Create a function to validate player's input
+    const validateInput = function (cell) {
+        if (/^[1-9]$/.test(cell)){
+            return true;
+        }
+        
+        return false;
     }
 
 
