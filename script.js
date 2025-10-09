@@ -285,7 +285,7 @@ var gameController = ( function () {
     }   
 
     return {
-       playGame: playGame;
+       playGame: playGame
     }
 })();   
 
