@@ -115,6 +115,7 @@ var gameController = ( function () {
             return true; 
         }
         else {
+            console.log("Your choose is not valid. Try again!");
             return false;
         }
     }
