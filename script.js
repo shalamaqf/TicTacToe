@@ -216,6 +216,16 @@ var gameController = ( function () {
         return false;
     }
 
+    // Create a function to check a draw in the game
+    const checkDraw = function () {
+        const board = GameBoard.getBoard().flat();
+
+        if (board.every(cell => cell === 'X' || cell === 'O')) {
+            return true;
+        }
+
+        return false;
+    }
 
     return {
        
