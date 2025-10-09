@@ -245,6 +245,33 @@ var gameController = ( function () {
         GameBoard.resetBoard();
     }
 
+    // Create a function to play one round
+    const playRound = function () {
+        if (!handleTurn()) {
+            // Invalid input, make the player choose again
+            return true;
+        }
+
+        // Check a draw or win
+        if (checkDraw() || declareWinner()) {
+            // If there's, ask the play again or no
+            if (playAgain()) {
+                resetGame();
+                return true;
+            }
+            // If no, end the game
+            return false;
+        }
+
+        /*
+            Valid input but there's no a draw or win,
+            then switch the player,
+            and continue the game
+        */
+        switchPlayer();
+        return true;
+    }
+
     return {
        
     }
