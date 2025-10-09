@@ -227,6 +227,18 @@ var gameController = ( function () {
         return false;
     }
 
+    // Create a function to ask the player whether they want to play again or no
+    const playAgain = function () {
+        const playerInput = prompt("Do you want to play again? Y/N: ");
+
+        if (playerInput.toLowerCase() === 'y') {
+            return true;
+        }
+
+        return false;
+
+    }
+
     return {
        
     }
