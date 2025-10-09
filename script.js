@@ -238,6 +238,12 @@ var gameController = ( function () {
 
     }
 
+    // Create a function to reset the game
+    const resetGame = function() {
+        // Reset the board
+        GameBoard.resetBoard();
+    }
+
     return {
        
     }
