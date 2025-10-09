@@ -112,7 +112,6 @@ var gameController = ( function () {
         
         if (isValid(cell)){
             GameBoard.updateBoard(currentPlayer.mark, cell);
-            GameBoard.displayBoard();
             return true; 
         }
         else {
@@ -198,6 +197,7 @@ var gameController = ( function () {
     // Create a function to declare the winner of the game
     const declareWinner = function () {
         if (checkWin()) {
+            GameBoard.displayBoard();
             console.log("The winner is " + currentPlayer.name);
             return true;
         } 
