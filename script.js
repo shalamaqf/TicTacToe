@@ -393,7 +393,7 @@ const screenController = ( function () {
 
     // Render text when the game is end with draw
     const renderDrawText = function () {
-        const drawText = document.createElement("h2");
+        const drawText = document.createElement("h1");
         drawText.className = "text draw";
         drawText.textContent = "It's a draw";
 
@@ -403,7 +403,7 @@ const screenController = ( function () {
 
     // Render text when the game is end with win
     const renderWinText = function () {
-        const winText = document.createElement("h2");
+        const winText = document.createElement("h1");
         winText.className = "text win";
         winText.textContent = "The winner is " + gameController.getCurrentPlayer().name + "!";
 
@@ -412,7 +412,7 @@ const screenController = ( function () {
 
     // Render text when player ends the game
     const renderThanksText = function () {
-        const thanksText = document.createElement("h2");
+        const thanksText = document.createElement("h1");
         thanksText.className = "text thanks";
         thanksText.textContent = "Thanks for playing the game!";
 
