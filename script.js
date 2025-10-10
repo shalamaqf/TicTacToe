@@ -300,3 +300,10 @@ function createPlayer(name, mark) {
         mark: mark,
     };
 }
+
+
+
+// Create a module pattern to wrap the logic of UI
+const screenController = ( function () {
+
+})();
