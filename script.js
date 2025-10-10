@@ -404,10 +404,19 @@ const screenController = ( function () {
     // Render text when the game is end with win
     const renderWinText = function () {
         const winText = document.createElement("h2");
-        winText.className = "text message";
+        winText.className = "text win";
         winText.textContent = "The winner is " + gameController.getCurrentPlayer().name + "!";
 
         return winText;
+    }
+
+    // Render text when player ends the game
+    const renderThanksText = function () {
+        const thanksText = document.createElement("h2");
+        thanksText.className = "text thanks";
+        thanksText.textContent = "Thanks for playing the game!";
+
+        return thanksText;
     }
 
     return {
