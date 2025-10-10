@@ -390,16 +390,16 @@ const screenController = ( function () {
         return boardContainer;
     }
 
-    // Render element when the game is end with draw
+    // Render text when the game is end with draw
     const renderDraw = function () {
-        const drawMessage = document.createElement("h2");
-        drawMessage.className = "message draw";
-        drawMessage.textContent = "It's a draw";
+        const drawText = document.createElement("h2");
+        drawText.className = "text draw";
+        drawText.textContent = "It's a draw";
 
-        return drawMessage;
+        return drawText;
     }
 
     return {
-        
+
     }
 })();
