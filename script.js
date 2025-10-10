@@ -287,7 +287,8 @@ var gameController = ( function () {
     }   
 
     return {
-       playGame: playGame
+       playGame: playGame,
+       getCurrentPlayer: getCurrentPlayer
     }
 })();   
 
@@ -391,12 +392,22 @@ const screenController = ( function () {
     }
 
     // Render text when the game is end with draw
-    const renderDraw = function () {
+    const renderDrawText = function () {
         const drawText = document.createElement("h2");
         drawText.className = "text draw";
         drawText.textContent = "It's a draw";
 
         return drawText;
+    }
+
+
+    // Render text when the game is end with win
+    const renderWinText = function () {
+        const winText = document.createElement("h2");
+        winText.className = "text message";
+        winText.textContent = "The winner is " + gameController.getCurrentPlayer().name + "!";
+
+        return winText;
     }
 
     return {
