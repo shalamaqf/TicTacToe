@@ -419,6 +419,35 @@ const screenController = ( function () {
         return thanksText;
     }
 
+    // Render end game screen (win/draw) 
+    const renderEndGameScreen = function () {
+        const endGameContainer = document.createElement("div");
+        const questionText = document.createElement("h1");
+        const buttonContainer = document.createElement("div");
+        const restartBtn = document.createElement("button");
+        const endBtn = document.createElement("button");
+
+        endGameContainer.className = "endGame-container";
+        questionText.className = "text question";
+        buttonContainer.className = "button-container"
+        restartBtn.className = "button restart";
+        restartBtn.type = "button";
+        endBtn.className = "button end";
+        endBtn.type = "button"
+
+        questionText.textContent = "Restart Game?";
+        restartBtn.textContent = "Restart";
+        endBtn.textContent = "End Game";
+
+        buttonContainer.appendChild(restartBtn);
+        buttonContainer.appendChild(endBtn);
+        endGameContainer.appendChild(questionText);
+        endGameContainer.appendChild(buttonContainer);
+        gameContainer.appendChild(endGameContainer);        
+
+        return endGameContainer;
+    }
+
     return {
 
     }
