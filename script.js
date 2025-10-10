@@ -367,6 +367,29 @@ const screenController = ( function () {
         return inputContainer;
     }
 
+    // Render the game board
+    const renderGameBoard = function () {
+        const boardContainer = document.createElement("div");
+        boardContainer.id = "board-container";
+
+        const board = GameBoard.getBoard();
+        let i;
+        let j;
+
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+                const boardCell = document.createElement("button");
+                boardCell.className = "cell";
+                boardCell.dataset.cell = board[i][j];
+                boardContainer.appendChild(boardCell);
+            }
+        }
+
+        gameContainer.appendChild(boardContainer);
+
+        return boardContainer;
+    }
+
     return {
         
     }
