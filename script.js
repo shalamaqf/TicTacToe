@@ -395,7 +395,7 @@ const screenController = ( function () {
     const renderDrawText = function () {
         const drawText = document.createElement("h1");
         drawText.className = "text draw";
-        drawText.textContent = "It's a draw!";
+        drawText.textContent = "It's A Draw!";
 
         return drawText;
     }
@@ -405,7 +405,7 @@ const screenController = ( function () {
     const renderWinText = function () {
         const winText = document.createElement("h1");
         winText.className = "text win";
-        winText.textContent = "The winner is " + gameController.getCurrentPlayer().name + "!";
+        winText.textContent = "The Winner Is " + gameController.getCurrentPlayer().name + "!";
 
         return winText;
     }
@@ -414,7 +414,7 @@ const screenController = ( function () {
     const renderThanksText = function () {
         const thanksText = document.createElement("h1");
         thanksText.className = "text thanks";
-        thanksText.textContent = "Thanks for playing the game!";
+        thanksText.textContent = "Thanks For Playing The Game!";
 
         return thanksText;
     }
