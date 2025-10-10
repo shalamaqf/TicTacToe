@@ -305,5 +305,19 @@ function createPlayer(name, mark) {
 
 // Create a module pattern to wrap the logic of UI
 const screenController = ( function () {
+    // Query the game container
+    const gameContainer = document.querySelector("#game-container");
 
+    // Render the start game button
+    const renderStartButton = function () {
+        const startButton = document.createElement("button");
+        startButton.id = "startBtn";
+        startButton.textContent = "Start Game";
+        gameContainer.appendChild(startButton);
+        return startButton;
+    }
+
+    return {
+        
+    }
 })();
