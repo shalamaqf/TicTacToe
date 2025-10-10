@@ -448,6 +448,21 @@ const screenController = ( function () {
         return endGameContainer;
     }
 
+    // Render the win screen
+    const renderWinScreen = function() {
+        const winContainer = document.createElement("div");
+        winContainer.className = "win-container";
+
+        const winText = renderWinText();
+        const endGameContainer = renderEndGameScreen();
+        
+        winContainer.appendChild(winText);
+        winContainer.appendChild(endGameContainer);
+        gameContainer.appendChild(winContainer);
+
+        return winContainer;
+    }
+
     return {
 
     }
