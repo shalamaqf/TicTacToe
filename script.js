@@ -496,6 +496,15 @@ const screenController = ( function () {
         gameContainer.innerHTML = "";
     } 
 
+    // Clear the old board
+    const clearOldBoard = function () {
+        const oldBoard = document.querySelector("#board-container");
+
+        if (oldBoard) {
+            oldBoard.remove();
+        }
+    }
+
     return {
 
     }
