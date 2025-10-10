@@ -491,6 +491,11 @@ const screenController = ( function () {
         return thanksContainer;
     }
 
+    // Clear the screen
+    const clearScreen = function () {
+        gameContainer.innerHTML = "";
+    } 
+
     return {
 
     }
