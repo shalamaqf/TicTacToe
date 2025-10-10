@@ -478,6 +478,19 @@ const screenController = ( function () {
         return drawContainer;
     }
 
+    // Render the thanks screen
+    const renderThanksScreen = function () {
+        const thanksContainer = document.createElement("div");
+        thanksContainer.className = "thanks-container";
+
+        const thanksText = renderThanksText();
+
+        thanksContainer.appendChild(thanksText);
+        gameContainer.appendChild(thanksContainer);
+
+        return thanksContainer;
+    }
+
     return {
 
     }
