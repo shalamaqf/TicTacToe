@@ -311,10 +311,60 @@ const screenController = ( function () {
     // Render the start game button
     const renderStartButton = function () {
         const startButton = document.createElement("button");
+
         startButton.id = "startBtn";
         startButton.textContent = "Start Game";
+
         gameContainer.appendChild(startButton);
+
         return startButton;
+    }
+
+    // Render the player's name input form
+    const renderNameInputForm = function () {
+        const inputContainer = document.createElement("div");
+        const firstInputContainer = document.createElement("div");
+        const secondInputContainer = document.createElement("div");
+        const labelInputFirstPlayer = document.createElement("label");
+        const nameInputFirstPlayer = document.createElement("input");
+        const labelInputSecondPlayer = document.createElement("label");
+        const nameInputSecondPlayer = document.createElement("input");
+        const continueButton = document.createElement("button");
+
+        inputContainer.id = "input-container";
+        firstInputContainer.className = "input firstPlayer";
+        secondInputContainer.className = "input secondPlayer"
+        labelInputFirstPlayer.className = "label input";
+        nameInputFirstPlayer.className = "name input";
+        nameInputFirstPlayer.type = "text";
+        nameInputFirstPlayer.required = true;
+        nameInputFirstPlayer.minLength = 1;
+        nameInputFirstPlayer.maxLength = 15;
+        labelInputSecondPlayer.className = "label input";
+        nameInputSecondPlayer.className = "name input";
+        nameInputSecondPlayer.type = "text";
+        nameInputSecondPlayer.required = true;
+        nameInputSecondPlayer.minLength = 1;
+        nameInputSecondPlayer.maxLength = 15;
+        continueButton.id = "continueBtn";
+        continueButton.type = "button";
+
+        labelInputFirstPlayer.textContent = "Player 1: "
+        nameInputFirstPlayer.placeholder = "Enter your name ...";
+        labelInputSecondPlayer.textContent = "Player 2: ";
+        nameInputSecondPlayer.placeholder = "Enter your name ...";
+        continueButton.textContent = "Continue";
+
+        firstInputContainer.appendChild(labelInputFirstPlayer);
+        firstInputContainer.appendChild(nameInputFirstPlayer);
+        secondInputContainer.appendChild(labelInputSecondPlayer);
+        secondInputContainer.appendChild(nameInputSecondPlayer);
+        inputContainer.appendChild(firstInputContainer);
+        inputContainer.appendChild(secondInputContainer);
+        inputContainer.appendChild(continueButton);
+        gameContainer.appendChild(inputContainer);
+
+        return inputContainer;
     }
 
     return {
