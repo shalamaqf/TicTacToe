@@ -395,7 +395,7 @@ const screenController = ( function () {
     const renderDrawText = function () {
         const drawText = document.createElement("h1");
         drawText.className = "text draw";
-        drawText.textContent = "It's a draw";
+        drawText.textContent = "It's a draw!";
 
         return drawText;
     }
@@ -461,6 +461,21 @@ const screenController = ( function () {
         gameContainer.appendChild(winContainer);
 
         return winContainer;
+    }
+
+    // Render the draw screen
+    const renderDrawScreen = function () {
+        const drawContainer = document.createElement("div");
+        drawContainer.className = "draw-container";
+
+        const drawText = renderDrawText();
+        const endGameContainer = renderEndGameScreen();
+
+        drawContainer.appendChild(drawText);
+        drawContainer.appendChild(endGameContainer);
+        gameContainer.appendChild(drawContainer);
+
+        return drawContainer;
     }
 
     return {
