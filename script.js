@@ -457,6 +457,18 @@ const screenController = ( function () {
         return boardContainer;
     }
 
+    // Create a function to attach an event listener to each cell on the board
+    const handleCellBoard = function () {
+        const cells = document.querySelectorAll('.cell');
+
+        cells.forEach(cell => {
+            cell.addEventListener('click', () => {
+                const cellNum = cell.dataset.cell;
+                gameController.handleTurn(cellNum);
+            })
+        })
+    }
+
     // Render the updated cell
     const renderUpdateBoard = function (cellNum, playerMark) {
         const updatedCell = document.querySelector(`[data-cell="${cellNum}"]`);
