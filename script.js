@@ -534,6 +534,18 @@ const screenController = ( function () {
         return endGameContainer;
     }
 
+    // Create a function to attach an event listener to 'Restart Game' button
+    const handleRestartGame = function () {
+        const restartBtn = document.querySelector(".button.restart");
+
+        restartBtn.addEventListener('click', () => {
+            clearScreen();
+            GameBoard.resetGame();
+            renderGameBoard();
+            handleCellBoard();
+        })
+    }
+
     // Render the win screen
     const renderWinScreen = function() {
         const winContainer = document.createElement("div");
