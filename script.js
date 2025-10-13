@@ -327,6 +327,7 @@ const screenController = ( function () {
 
         // Attach an event to the button
         startBtn.addEventListener('click', function () {
+            clearScreen();
             renderNameInputForm();
         })
     }
