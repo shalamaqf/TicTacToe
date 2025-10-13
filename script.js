@@ -416,6 +416,22 @@ const screenController = ( function () {
         gameContainer.appendChild(turnContainer);
     }
 
+    // Render invalid move indicator
+    const renderInvalidMove = function () {
+        const invalidContainer = document.createElement("div");
+        const invalidText = document.createElement("p");
+
+        invalidContainer.className = "invalid-container";
+        invalidText.id = "invalid-text";
+
+        invalidText.textContent = "Your move is invalid! Please try again.";
+
+        invalidContainer.appendChild(invalidText);
+        gameContainer.appendChild(invalidContainer);
+
+        return invalidContainer;
+    }
+
     // Render the game board
     const renderGameBoard = function () {
         const boardContainer = document.createElement("div");
