@@ -434,7 +434,7 @@ const screenController = ( function () {
         return invalidContainer;
     }
 
-    // Render the game board
+    // Render the initial game board
     const renderGameBoard = function () {
         const boardContainer = document.createElement("div");
         boardContainer.id = "board-container";
@@ -455,6 +455,14 @@ const screenController = ( function () {
         gameContainer.appendChild(boardContainer);
 
         return boardContainer;
+    }
+
+    // Render the updated cell
+    const renderUpdateBoard = function (cellNum, playerMark) {
+        const updatedCell = document.querySelector(`[data-cell="${cellNum}"]`);
+        updatedCell.textContent = playerMark;
+        
+        return updatedCell;
     }
 
     // Render text when the game is end with draw
