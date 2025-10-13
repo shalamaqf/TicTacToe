@@ -414,6 +414,8 @@ const screenController = ( function () {
 
         turnContainer.appendChild(turnIndicator);
         gameContainer.appendChild(turnContainer);
+
+        return turnContainer;
     }
 
     // Render invalid move indicator
