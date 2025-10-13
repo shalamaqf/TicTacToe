@@ -203,18 +203,6 @@ var gameController = ( function () {
         return false;
     }
 
-    // Create a function to ask the player whether they want to play again or no
-    const playAgain = function () {
-        const playerInput = prompt("Do you want to play again? Y/N: ");
-
-        if (playerInput.toLowerCase() === 'y') {
-            return true;
-        }
-
-        return false;
-
-    }
-
     // Create a function to reset the game
     const resetGame = function() {
         // Reset the board
@@ -230,19 +218,13 @@ var gameController = ( function () {
 
         if (checkDraw()) {
             screenController.renderDrawScreen();
-            if (playAgain()) {
-                resetGame();
-                return true;
-            }
+            screenController.setupEndGame();
             return false;
         }
 
         if (declareWinner()) {
             screenController.renderWinScreen();
-            if (playAgain()) {
-                resetGame();
-                return true;
-            }
+            screenController.setupEndGame();
             return false;
         }
 
