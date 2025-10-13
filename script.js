@@ -199,8 +199,6 @@ var gameController = ( function () {
         const board = GameBoard.getBoard().flat();
 
         if (board.every(cell => cell === 'X' || cell === 'O')) {
-            GameBoard.displayBoard();
-            console.log("It's a draw!");
             return true;
         }
 
@@ -232,14 +230,12 @@ var gameController = ( function () {
             return true;
         }
 
-        // Check a draw or win
-        if (checkDraw() || declareWinner()) {
-            // If there's, ask the play again or no
+        if (checkDraw()) {
+            screenController.renderDrawScreen();
             if (playAgain()) {
                 resetGame();
                 return true;
             }
-            // If no, end the game
             return false;
         }
 
@@ -594,6 +590,7 @@ const screenController = ( function () {
         continueButtonSetup: continueButtonSetup,
         setupEndGame: setupEndGame,
         renderInvalidMove: renderInvalidMove,
-        renderUpdateBoard: renderUpdateBoard
+        renderUpdateBoard: renderUpdateBoard,
+        renderDrawScreen: renderDrawScreen
     }
 })();
