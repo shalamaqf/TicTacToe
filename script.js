@@ -402,6 +402,20 @@ const screenController = ( function () {
         handleContinueClick();
     }
 
+    // Render player's turn indicator
+    const renderPlayerTurn = function () {
+        const turnContainer = document.createElement("div");
+        const turnIndicator = document.createElement("p");
+
+        turnContainer.className = "turn-container";
+        turnIndicator.id = "turn-indicator";
+
+        turnIndicator.textContent = gameController.getCurrentPlayer().name + "'s turn!";
+
+        turnContainer.appendChild(turnIndicator);
+        gameContainer.appendChild(turnContainer);
+    }
+
     // Render the game board
     const renderGameBoard = function () {
         const boardContainer = document.createElement("div");
