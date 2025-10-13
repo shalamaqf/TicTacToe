@@ -101,21 +101,14 @@ var gameController = ( function () {
     }
 
     // Create a function to handle user input and the state of the board
-    const handleTurn = function () {
-        GameBoard.displayBoard();
-
-        const cell = getPlayerInput();
-
-        if (!validateInput(cell)) {
-            return false;
-        }
-        
-        if (isValid(cell)){
-            GameBoard.updateBoard(currentPlayer.mark, cell);
+    const handleTurn = function (cellNum) {
+        if (isValid(cellNum)){
+            GameBoard.updateBoard(currentPlayer.mark, cellNum);
+            screenController.renderUpdateBoard();
             return true; 
         }
         else {
-            console.log("Your choose is not valid. Try again!");
+            screenController.renderInvalidMove();
             return false;
         }
     }
@@ -614,6 +607,8 @@ const screenController = ( function () {
     return {
         startGameSetup: startGameSetup,
         continueButtonSetup: continueButtonSetup,
-        setupEndGame: setupEndGame
+        setupEndGame: setupEndGame,
+        renderInvalidMove: renderInvalidMove,
+        renderUpdateBoard: renderUpdateBoard
     }
 })();
