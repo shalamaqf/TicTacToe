@@ -321,6 +321,16 @@ const screenController = ( function () {
         return startButton;
     }
 
+    // Create an event listener for 'Start Game' button
+    const handleStartGameClick = function () {
+        const startBtn = document.querySelector("#startBtn");
+
+        // Attach an event to the button
+        startBtn.addEventListener('click', function () {
+            renderNameInputForm();
+        })
+    }
+
     // Render the player's name input form
     const renderNameInputForm = function () {
         const inputContainer = document.createElement("div");
