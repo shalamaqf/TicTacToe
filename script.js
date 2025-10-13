@@ -331,6 +331,12 @@ const screenController = ( function () {
         })
     }
 
+    // Create a function to set up the start game UI logic
+    const startGameSetup = function () {
+        renderStartButton();
+        handleStartGameClick();
+    }
+
     // Render the player's name input form
     const renderNameInputForm = function () {
         const inputContainer = document.createElement("div");
@@ -516,6 +522,6 @@ const screenController = ( function () {
     }
 
     return {
-
+        startGameSetup: startGameSetup
     }
 })();
