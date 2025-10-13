@@ -556,6 +556,13 @@ const screenController = ( function () {
         })
     }
 
+    // Create a function to setup the end game screen
+    const setupEndGame = function () {
+        renderEndGameScreen();
+        handleRestartGame();
+        handleEndGame();
+    }
+
     // Render the win screen
     const renderWinScreen = function() {
         const winContainer = document.createElement("div");
@@ -606,6 +613,7 @@ const screenController = ( function () {
 
     return {
         startGameSetup: startGameSetup,
-        continueButtonSetup: continueButtonSetup
+        continueButtonSetup: continueButtonSetup,
+        setupEndGame: setupEndGame
     }
 })();
