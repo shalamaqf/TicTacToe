@@ -84,12 +84,6 @@ var gameController = ( function () {
     // Create a variable to store the current player
     let currentPlayer = player1;
 
-    // Create a function to get the player's input
-    const getPlayerInput = function () {
-        const playerInput = prompt("Choose a cell (1 - 9): ");
-        return playerInput;
-    }
-
     // Create a function to check if player input is valid or not
     const isValid = function (cell) {
         if (GameBoard.isCellAvail(cell)) {
@@ -198,15 +192,6 @@ var gameController = ( function () {
         else {
             return false;
         }
-    }
-
-    // Create a function to validate player's input
-    const validateInput = function (cell) {
-        if (/^[1-9]$/.test(cell)){
-            return true;
-        }
-        
-        return false;
     }
 
     // Create a function to check a draw in the game
