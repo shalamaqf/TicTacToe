@@ -185,8 +185,6 @@ var gameController = ( function () {
     // Create a function to declare the winner of the game
     const declareWinner = function () {
         if (checkWin()) {
-            GameBoard.displayBoard();
-            console.log("The winner is " + currentPlayer.name);
             return true;
         } 
         else {
@@ -232,6 +230,15 @@ var gameController = ( function () {
 
         if (checkDraw()) {
             screenController.renderDrawScreen();
+            if (playAgain()) {
+                resetGame();
+                return true;
+            }
+            return false;
+        }
+
+        if (declareWinner()) {
+            screenController.renderWinScreen();
             if (playAgain()) {
                 resetGame();
                 return true;
@@ -591,6 +598,7 @@ const screenController = ( function () {
         setupEndGame: setupEndGame,
         renderInvalidMove: renderInvalidMove,
         renderUpdateBoard: renderUpdateBoard,
-        renderDrawScreen: renderDrawScreen
+        renderDrawScreen: renderDrawScreen,
+        renderWinScreen: renderWinScreen
     }
 })();
