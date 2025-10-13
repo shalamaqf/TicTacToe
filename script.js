@@ -98,11 +98,11 @@ var gameController = ( function () {
     const handleTurn = function (cellNum) {
         if (isValid(cellNum)){
             GameBoard.updateBoard(currentPlayer.mark, cellNum);
-            screenController.renderUpdateBoard();
+            screenController.renderUpdateBoard(cellNum, currentPlayer.mark);
             return true; 
         }
         else {
-            screenController.renderInvalidMove();
+            screenController.renderInvalidMove(cellNum, currentPlayer.mark);
             return false;
         }
     }
