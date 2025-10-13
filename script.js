@@ -237,18 +237,6 @@ var gameController = ( function () {
         return true;
     }
 
-    // Create a function to play the game
-    const playGame = function () {
-        while(true) {
-            const continueTheGame = playRound();
-
-            if (!continueTheGame) {
-                console.log("Thanks for play!");
-                break;
-            }
-        }   
-    }   
-
     return {
        playGame: playGame,
        getCurrentPlayer: getCurrentPlayer
