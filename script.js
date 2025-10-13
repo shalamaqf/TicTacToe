@@ -238,7 +238,6 @@ var gameController = ( function () {
     }
 
     return {
-       playGame: playGame,
        getCurrentPlayer: getCurrentPlayer
     }
 })();   
