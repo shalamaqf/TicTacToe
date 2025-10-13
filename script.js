@@ -546,6 +546,16 @@ const screenController = ( function () {
         })
     }
 
+    // Create a function to attach an event listener to 'End Game' button
+    const handleEndGame = function () {
+        const endGameBtn = document.querySelector(".button.end");
+
+        endGameBtn.addEventListener('click', () => {
+            clearScreen();
+            renderThanksScreen();
+        })
+    }
+
     // Render the win screen
     const renderWinScreen = function() {
         const winContainer = document.createElement("div");
