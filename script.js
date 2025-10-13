@@ -396,7 +396,12 @@ const screenController = ( function () {
         })
     }
 
-    
+    // Create a function to setup the 'Continue' button
+    const continueButtonSetup = function () {
+        renderNameInputForm();
+        handleContinueClick();
+    }
+
     // Render the game board
     const renderGameBoard = function () {
         const boardContainer = document.createElement("div");
@@ -535,6 +540,7 @@ const screenController = ( function () {
     }
 
     return {
-        startGameSetup: startGameSetup
+        startGameSetup: startGameSetup,
+        continueButtonSetup: continueButtonSetup
     }
 })();
