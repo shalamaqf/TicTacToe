@@ -385,6 +385,18 @@ const screenController = ( function () {
         return inputContainer;
     }
 
+    // Create an event listener for 'Continue' button
+    const handleContinueClick = function () {
+        const continueBtn = document.querySelector("#continueBtn");
+
+        // Attach the event to the button
+        continueBtn.addEventListener('click', function () {
+            clearScreen();
+            renderGameBoard();
+        })
+    }
+
+    
     // Render the game board
     const renderGameBoard = function () {
         const boardContainer = document.createElement("div");
