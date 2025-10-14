@@ -77,12 +77,19 @@ var GameBoard = ( function () {
 
 // Create a module pattern to wrap the logic of game controller
 var gameController = ( function () {
-    // Create a variable to store the player object properties such as mark and score
-    let player1 = createPlayer("Player 1", 'X');
-    let player2 = createPlayer('Player 2', 'O');
+    // Create a variable to store player1, player 2, and currentPlayer
+    let player1;
+    let player2;
+    let currentPlayer;
 
-    // Create a variable to store the current player
-    let currentPlayer = player1;
+    // Create a setter for player 1 and player 2
+    const setPlayers = function (P1Name, P2Name) {
+        player1 = createPlayer(P1Name, 'X');
+        player2 = createPlayer(P2Name, 'O');
+
+        // Set the current player
+        currentPlayer = player1;
+    }
 
     // Create a function to check if player input is valid or not
     const isValid = function (cell) {
