@@ -311,18 +311,25 @@ const screenController = ( function () {
         inputContainer.id = "input-container";
         firstInputContainer.className = "input firstPlayer";
         secondInputContainer.className = "input secondPlayer"
+        
         labelInputFirstPlayer.className = "label input";
-        nameInputFirstPlayer.className = "name input";
+        labelInputFirstPlayer.setAttribute("for", "player1");
+        nameInputFirstPlayer.id = "player1";
+        nameInputFirstPlayer.className = "name input"
         nameInputFirstPlayer.type = "text";
         nameInputFirstPlayer.required = true;
         nameInputFirstPlayer.minLength = 1;
         nameInputFirstPlayer.maxLength = 15;
+
         labelInputSecondPlayer.className = "label input";
-        nameInputSecondPlayer.className = "name input";
+        labelInputSecondPlayer.setAttribute("for", "player1");
+        nameInputSecondPlayer.id = "player2";
+        nameInputSecondPlayer.className = "name input"
         nameInputSecondPlayer.type = "text";
         nameInputSecondPlayer.required = true;
         nameInputSecondPlayer.minLength = 1;
         nameInputSecondPlayer.maxLength = 15;
+        
         continueButton.id = "continueBtn";
         continueButton.type = "button";
 
