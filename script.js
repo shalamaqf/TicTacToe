@@ -324,6 +324,9 @@ const screenController = ( function () {
 
         // Attach the event to the button
         continueBtn.addEventListener('click', function () {
+            const p1 = document.querySelector("input.name.input:first-of-type");
+            const p2 = document.querySelector("input.name.input:last-of-type");
+            gameController.setPlayers(p1.value, p2.value)
             clearScreen();
             renderGameBoard();
         })
