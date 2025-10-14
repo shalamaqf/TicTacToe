@@ -120,6 +120,8 @@ var gameController = ( function () {
         else {
             currentPlayer = player1;
         }
+
+        screenController.renderPlayerTurn();
     }
 
     // Create a function to check player's mark on the board in horizontal pattern
@@ -207,34 +209,6 @@ var gameController = ( function () {
     const resetGame = function() {
         // Reset the board
         GameBoard.resetBoard();
-    }
-
-    // Create a function to play one round
-    const playRound = function () {
-        if (!handleTurn()) {
-            // Invalid input, make the player choose again
-            return true;
-        }
-
-        if (checkDraw()) {
-            screenController.renderDrawScreen();
-            screenController.setupEndGame();
-            return false;
-        }
-
-        if (declareWinner()) {
-            screenController.renderWinScreen();
-            screenController.setupEndGame();
-            return false;
-        }
-
-        /*
-            Valid input but there's no a draw or win,
-            then switch the player,
-            and continue the game
-        */
-        switchPlayer();
-        return true;
     }
 
     return {
@@ -568,6 +542,7 @@ const screenController = ( function () {
         renderInvalidMove: renderInvalidMove,
         renderUpdateBoard: renderUpdateBoard,
         renderDrawScreen: renderDrawScreen,
-        renderWinScreen: renderWinScreen
+        renderWinScreen: renderWinScreen,
+        renderPlayerTurn: renderPlayerTurn
     }
 })();
