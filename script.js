@@ -225,12 +225,10 @@ var gameController = ( function () {
             // Check win 
             if (declareWinner()) {
                 screenController.renderWinScreen();
-                screenController.setupEndGame();
             }
             // Check draw
             else if (checkDraw()) {
                 screenController.renderDrawScreen();
-                screenController.setupEndGame();
             }
             // If no win/draw, switch the player
             else {
@@ -516,7 +514,7 @@ const screenController = ( function () {
 
         restartBtn.addEventListener('click', () => {
             clearScreen();
-            GameBoard.resetGame();
+            gameController.resetGame();
             renderGameBoard();
             handleCellBoard();
         })
@@ -534,7 +532,6 @@ const screenController = ( function () {
 
     // Create a function to setup the end game screen
     const setupEndGame = function () {
-        renderEndGameScreen();
         handleRestartGame();
         handleEndGame();
     }
@@ -546,6 +543,8 @@ const screenController = ( function () {
 
         const winText = renderWinText();
         const endGameContainer = renderEndGameScreen();
+
+        setupEndGame();
         
         winContainer.appendChild(winText);
         winContainer.appendChild(endGameContainer);
@@ -561,6 +560,8 @@ const screenController = ( function () {
 
         const drawText = renderDrawText();
         const endGameContainer = renderEndGameScreen();
+
+        setupEndGame();
 
         drawContainer.appendChild(drawText);
         drawContainer.appendChild(endGameContainer);
@@ -598,3 +599,5 @@ const screenController = ( function () {
         renderPlayerTurn: renderPlayerTurn
     }
 })();
+
+screenController.startGameSetup();
