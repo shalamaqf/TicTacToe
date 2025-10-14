@@ -81,6 +81,7 @@ var gameController = ( function () {
     let player1;
     let player2;
     let currentPlayer;
+    let lastStarter;
 
     // Create a setter for player 1 and player 2
     const setPlayers = function (P1Name, P2Name) {
@@ -89,6 +90,7 @@ var gameController = ( function () {
 
         // Set the current player
         currentPlayer = player1;
+        lastStarter = player2;
     }
 
     // Create a function to check if player input is valid or not
@@ -126,6 +128,20 @@ var gameController = ( function () {
         else {
             currentPlayer = player1;
         }
+        screenController.renderPlayerTurn();
+    }
+
+    // Create a function to alternate the starter player every game
+    const alternatePlayer = function() {
+        if (currentPlayer === player1) {
+            lastStarter = player1;
+            currentPlayer = player2;
+        }
+        else {
+            lastStarter = player2;
+            currentPlayer = player1;
+        }
+
         screenController.renderPlayerTurn();
     }
 
@@ -245,7 +261,8 @@ var gameController = ( function () {
        resetGame: resetGame,
        setPlayers: setPlayers,
        handleMove: handleMove,
-       switchPlayer: switchPlayer
+       switchPlayer: switchPlayer,
+       alternatePlayer: alternatePlayer
     }
 })();   
 
@@ -523,6 +540,7 @@ const screenController = ( function () {
             gameController.resetGame();
             renderGameBoard();
             handleCellBoard();
+            gameController.alternatePlayer();
         })
     }
 
