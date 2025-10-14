@@ -217,10 +217,37 @@ var gameController = ( function () {
         GameBoard.resetBoard();
     }
 
+    // Create a function to handle both logic and UI for move process
+    const handleMove = function (cellNum) {
+        // Let user click a cell
+        if (handleTurn(cellNum)) {
+            
+            // Check win 
+            if (declareWinner()) {
+                screenController.renderWinScreen();
+                screenController.setupEndGame();
+            }
+            // Check draw
+            else if (checkDraw()) {
+                screenController.renderDrawScreen();
+                screenController.setupEndGame();
+            }
+            // If no win/draw, switch the player
+            else {
+                switchPlayer();
+            }
+        }
+        else {
+            // If player's move invalid, then prompt again
+            screenController.renderInvalidMove();
+        }
+    }
+
     return {
        getCurrentPlayer: getCurrentPlayer,
        resetGame: resetGame,
-       setPlayers: setPlayers
+       setPlayers: setPlayers,
+       handleMove: handleMove
     }
 })();   
 
@@ -328,6 +355,7 @@ const screenController = ( function () {
             gameController.setPlayers(p1.value, p2.value)
             clearScreen();
             renderGameBoard();
+            handleCellBoard();
         })
     }
 
@@ -398,8 +426,8 @@ const screenController = ( function () {
 
         cells.forEach(cell => {
             cell.addEventListener('click', () => {
-                const cellNum = cell.dataset.cell;
-                gameController.handleTurn(cellNum);
+                const cellNum = Number(cell.dataset.cell);
+                gameController.handleMove(cellNum);
             })
         })
     }
