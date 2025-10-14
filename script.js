@@ -212,7 +212,8 @@ var gameController = ( function () {
     }
 
     return {
-       getCurrentPlayer: getCurrentPlayer
+       getCurrentPlayer: getCurrentPlayer,
+       resetGame: resetGame
     }
 })();   
 
