@@ -109,7 +109,6 @@ var gameController = ( function () {
             return true; 
         }
         else {
-            screenController.renderInvalidMove(cellNum, currentPlayer.mark);
             return false;
         }
     }
