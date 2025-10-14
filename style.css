@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+
+
+/* LAYOUT */
+
 body {
   width: 100vw;
   min-height: 100vh;
@@ -21,6 +25,7 @@ body {
   max-width: 1200px;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -38,4 +43,29 @@ body {
 
 .input.secondPlayer {
   margin-bottom: 2rem;
+}
+
+#board-container {
+  max-width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+#turn-indicator {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cell {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
