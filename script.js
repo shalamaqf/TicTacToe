@@ -357,8 +357,14 @@ const screenController = ( function () {
 
         // Attach the event to the button
         continueBtn.addEventListener('click', function () {
-            const p1 = document.querySelector("input.name.input:first-of-type");
-            const p2 = document.querySelector("input.name.input:last-of-type");
+            const p1 = document.querySelector("#player1");
+            const p2 = document.querySelector("#player2");
+
+            if (!p1.value.trim() || !p2.value.trim() ) {
+                alert("Both players must enter their name!");
+                return;
+            }
+
             gameController.setPlayers(p1.value, p2.value)
             clearScreen();
             renderGameBoard();
