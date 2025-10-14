@@ -126,7 +126,6 @@ var gameController = ( function () {
         else {
             currentPlayer = player1;
         }
-
         screenController.renderPlayerTurn();
     }
 
@@ -245,7 +244,8 @@ var gameController = ( function () {
        getCurrentPlayer: getCurrentPlayer,
        resetGame: resetGame,
        setPlayers: setPlayers,
-       handleMove: handleMove
+       handleMove: handleMove,
+       switchPlayer: switchPlayer
     }
 })();   
 
@@ -378,18 +378,21 @@ const screenController = ( function () {
 
     // Render player's turn indicator
     const renderPlayerTurn = function () {
-        const turnContainer = document.createElement("div");
-        const turnIndicator = document.createElement("p");
+        let turnIndicator = document.querySelector("#turn-indicator");
 
-        turnContainer.className = "turn-container";
-        turnIndicator.id = "turn-indicator";
+        if (!turnIndicator) {
+            const turnContainer = document.createElement("div");
+            turnIndicator = document.createElement("p");
 
-        turnIndicator.textContent = gameController.getCurrentPlayer().name + "'s turn!";
+            turnContainer.className = "turn-container";
+            turnIndicator.id = "turn-indicator";
 
-        turnContainer.appendChild(turnIndicator);
-        gameContainer.appendChild(turnContainer);
+            turnContainer.appendChild(turnIndicator);
 
-        return turnContainer;
+            gameContainer.prepend(turnContainer);
+        }
+
+        turnIndicator.textContent = gameController.getCurrentPlayer().name + "'s Turn!";
     }
 
     // Render invalid move indicator
@@ -427,6 +430,9 @@ const screenController = ( function () {
         }
 
         gameContainer.appendChild(boardContainer);
+
+        // Render the player's turn
+        screenController.renderPlayerTurn();
 
         return boardContainer;
     }
