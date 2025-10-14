@@ -220,7 +220,8 @@ var gameController = ( function () {
 
     return {
        getCurrentPlayer: getCurrentPlayer,
-       resetGame: resetGame
+       resetGame: resetGame,
+       setPlayers: setPlayers
     }
 })();   
 
