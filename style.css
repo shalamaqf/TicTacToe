@@ -24,3 +24,18 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+#input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input.firstPlayer {
+  margin-bottom: 1rem;
+}
+
+.input.secondPlayer {
+  margin-bottom: 2rem;
+}
