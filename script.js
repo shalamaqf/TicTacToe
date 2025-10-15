@@ -253,6 +253,7 @@ var gameController = ( function () {
         else {
             // If player's move invalid, then prompt again
             screenController.renderInvalidMove();
+            screenController.removeInvalid();
         }
     }
 
@@ -414,18 +415,30 @@ const screenController = ( function () {
 
     // Render invalid move indicator
     const renderInvalidMove = function () {
-        const invalidContainer = document.createElement("div");
-        const invalidText = document.createElement("p");
+        let invalidText = document.querySelector("#invalid-text");
 
-        invalidContainer.className = "invalid-container";
-        invalidText.id = "invalid-text";
+        if (!invalidText) {
+            const invalidContainer = document.createElement("div");
+            const invalidText = document.createElement("p");
 
-        invalidText.textContent = "Your move is invalid! Please try again.";
+            invalidContainer.className = "invalid-container";
+            invalidText.id = "invalid-text";
 
-        invalidContainer.appendChild(invalidText);
-        gameContainer.appendChild(invalidContainer);
+            invalidText.textContent = "Your move is invalid! Please try again.";
 
-        return invalidContainer;
+            invalidContainer.appendChild(invalidText);
+            gameContainer.appendChild(invalidContainer);
+        }
+
+    }
+
+    // Create a function to remove the invalid text if the next move is valid
+    const removeInvalid = function () {
+        let invalidText = document.querySelector("#invalid-text");
+
+        if (invalidText) {
+            invalidText.remove();
+        }
     }
 
     // Render the initial game board
@@ -632,7 +645,8 @@ const screenController = ( function () {
         renderUpdateBoard: renderUpdateBoard,
         renderDrawScreen: renderDrawScreen,
         renderWinScreen: renderWinScreen,
-        renderPlayerTurn: renderPlayerTurn
+        renderPlayerTurn: renderPlayerTurn,
+        removeInvalid: removeInvalid
     }
 })();
 
