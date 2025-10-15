@@ -554,6 +554,24 @@ const screenController = ( function () {
         })
     }
 
+    // Create a function to disabled cell buttons
+    const disabledCell = function () {
+        const cells = document.querySelectorAll(".cell");
+
+        cells.forEach(cell => {
+            cell.disabled = true;
+        });
+    }
+
+    // Create a function to enable cell buttons
+    const enableCell = function () {
+        const cells = document.querySelectorAll(".cell");
+
+        cells.forEach(cell => {
+            cell.disabled = false;
+        });
+    }
+
     // Create a function to setup the end game screen
     const setupEndGame = function () {
         handleRestartGame();
