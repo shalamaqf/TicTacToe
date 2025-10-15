@@ -167,3 +167,8 @@ body {
   font-size: 3rem;
   cursor: pointer;
 }
+
+#turn-indicator {
+  color: rgba(245, 245, 245, 0.8);
+  font-size: 3rem;
+}
