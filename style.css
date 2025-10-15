@@ -168,7 +168,7 @@ body {
 }
 
 #turn-indicator {
-  color: rgba(245, 245, 245, 0.8);
+  color:  rgba(255, 255, 204, 0.8);
   font-size: 3rem;
 }
 
@@ -204,7 +204,7 @@ body {
 
 .text.win {
   font-size: 4rem;
-  color: rgba(255, 255, 204, 0.8);
+  color: rgba(255, 250, 160, 0.85); 
 
   text-align: center;       
   word-wrap: break-word;    
@@ -247,4 +247,12 @@ body {
   word-wrap: break-word;    
   overflow-wrap: break-word;
   white-space: normal;    
+}
+
+.mark-x {
+  color: rgba(173, 216, 230, 0.8);
+}
+
+.mark-o {
+  color: rgba(255, 182, 193, 0.8);
 }

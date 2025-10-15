@@ -470,6 +470,8 @@ const screenController = ( function () {
     const renderUpdateBoard = function (cellNum, playerMark) {
         const updatedCell = document.querySelector(`[data-cell="${cellNum}"]`);
         updatedCell.textContent = playerMark;
+
+        updatedCell.classList.add(playerMark === 'X' ? 'mark-x' : 'mark-o');
         
         return updatedCell;
     }
