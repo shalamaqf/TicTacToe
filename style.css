@@ -118,6 +118,14 @@ body {
 }
 
 
+.invalid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 2rem;
+}
+
 
 /* Style */
 
@@ -280,4 +288,9 @@ body {
   word-wrap: break-word;    
   overflow-wrap: break-word;
   white-space: normal;    
+}
+
+#invalid-text {
+  font-size: 2rem;
+  color: rgba(255, 102, 102, 0.8);
 }

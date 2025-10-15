@@ -106,6 +106,7 @@ var gameController = ( function () {
     // Create a function to handle user input and the state of the board
     const handleTurn = function (cellNum) {
         if (isValid(cellNum)){
+            screenController.removeInvalid();
             GameBoard.updateBoard(currentPlayer.mark, cellNum);
             screenController.renderUpdateBoard(cellNum, currentPlayer.mark);
             return true; 
@@ -253,7 +254,6 @@ var gameController = ( function () {
         else {
             // If player's move invalid, then prompt again
             screenController.renderInvalidMove();
-            screenController.removeInvalid();
         }
     }
 
@@ -438,7 +438,9 @@ const screenController = ( function () {
 
         if (invalidText) {
             invalidText.remove();
-        }
+        } 
+
+        return;
     }
 
     // Render the initial game board
