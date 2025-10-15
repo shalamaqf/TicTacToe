@@ -238,3 +238,13 @@ body {
   color: rgba(255, 102, 102, 0.8);
   border-bottom: dashed 2px rgba(255, 102, 102, 0.8);
 }
+
+.text.draw {
+  font-size: 4rem;
+  color: rgba(255, 255, 204, 0.8);
+
+  text-align: center;       
+  word-wrap: break-word;    
+  overflow-wrap: break-word;
+  white-space: normal;    
+}
