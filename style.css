@@ -123,3 +123,14 @@ body {
   
   font-family: 'Cabin Sketch', sans-serif;
 }
+
+#startBtn {
+  background: none;
+  border: none;
+
+  font-family: 'Cabin Sketch', sans-serif;
+  color: rgba(245, 245, 245, 0.8);
+
+  font-size: 4rem;
+  cursor: pointer;
+}
