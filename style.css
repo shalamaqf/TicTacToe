@@ -164,7 +164,7 @@ body {
 }
 
 #player2 {
-  color: rgba(144, 238, 144, 0.8);
+  color: rgba(189, 252, 201, 0.8)
 }
 
 .name.input:focus {
@@ -270,4 +270,14 @@ body {
 
 .mark-o {
   color: rgba(255, 182, 193, 0.8);
+}
+
+.text.thanks {
+  font-size: 4rem;
+  color: rgba(173, 216, 230, 0.8);
+
+  text-align: center;       
+  word-wrap: break-word;    
+  overflow-wrap: break-word;
+  white-space: normal;    
 }
