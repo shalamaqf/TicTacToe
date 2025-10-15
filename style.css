@@ -50,17 +50,16 @@ body {
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
 }
 
 #turn-indicator {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .cell {
-  width: 4rem;
-  height: 4rem;
+  width: 6rem;
+  height: 6rem;
   font-size: 2rem;
   text-align: center;
   cursor: pointer;
@@ -171,4 +170,34 @@ body {
 #turn-indicator {
   color: rgba(245, 245, 245, 0.8);
   font-size: 3rem;
+}
+
+#board-container .cell {
+  background: none;
+  border: none;
+}
+
+#board-container .cell:first-child,
+#board-container .cell:nth-child(2),
+#board-container .cell:nth-child(4),
+#board-container .cell:nth-child(5),
+#board-container .cell:nth-child(7),
+#board-container .cell:nth-child(8) {
+  border-right: 4px solid rgba(245, 245, 245, 0.8);;
+}
+
+#board-container .cell:first-child,
+#board-container .cell:nth-child(2),
+#board-container .cell:nth-child(3),
+#board-container .cell:nth-child(4),
+#board-container .cell:nth-child(5),
+#board-container .cell:nth-child(6) {
+  border-bottom: 4px solid rgba(245, 245, 245, 0.8);;
+}
+
+.cell {
+  font-size: 5rem;
+  font-family: 'Cabin Sketch', sans-serif;
+  color: rgba(245, 245, 245, 0.8);
+  cursor: pointer;
 }
