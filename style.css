@@ -159,6 +159,14 @@ body {
   cursor: pointer;
 }
 
+#player1 {
+  color: rgba(200, 230, 255, 0.8);
+}
+
+#player2 {
+  color: rgba(144, 238, 144, 0.8);
+}
+
 .name.input:focus {
   outline: none;
 }
