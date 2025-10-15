@@ -562,20 +562,12 @@ const screenController = ( function () {
             cell.disabled = true;
         });
     }
-
-    // Create a function to enable cell buttons
-    const enableCell = function () {
-        const cells = document.querySelectorAll(".cell");
-
-        cells.forEach(cell => {
-            cell.disabled = false;
-        });
-    }
-
+    
     // Create a function to setup the end game screen
     const setupEndGame = function () {
-        handleRestartGame();
+        disabledCell();
         handleEndGame();
+        handleRestartGame();
     }
 
     // Render the win screen
@@ -585,12 +577,12 @@ const screenController = ( function () {
 
         const winText = renderWinText();
         const endGameContainer = renderEndGameScreen();
-
-        setupEndGame();
         
         winContainer.appendChild(winText);
         winContainer.appendChild(endGameContainer);
         gameContainer.appendChild(winContainer);
+
+        setupEndGame();
 
         return winContainer;
     }
@@ -603,11 +595,11 @@ const screenController = ( function () {
         const drawText = renderDrawText();
         const endGameContainer = renderEndGameScreen();
 
-        setupEndGame();
-
         drawContainer.appendChild(drawText);
         drawContainer.appendChild(endGameContainer);
         gameContainer.appendChild(drawContainer);
+
+        setupEndGame();
 
         return drawContainer;
     }
