@@ -104,3 +104,9 @@ body {
 
   margin-top: 2rem;
 }
+
+.thanks-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
