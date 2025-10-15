@@ -94,3 +94,13 @@ body {
   align-items: center;
   gap: 2em;
 }
+
+.draw-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+
+  margin-top: 2rem;
+}
