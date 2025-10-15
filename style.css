@@ -38,11 +38,11 @@ body {
 }
 
 .input.firstPlayer {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .input.secondPlayer {
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 #board-container {
@@ -132,5 +132,38 @@ body {
   color: rgba(245, 245, 245, 0.8);
 
   font-size: 4rem;
+  cursor: pointer;
+}
+
+.label.input {
+  color: rgba(245, 245, 245, 0.8);
+
+  font-size: 3rem;
+}
+
+.name.input {
+  background: none;
+  border: none;
+  border-bottom: dashed 3px rgba(245, 245, 245, 0.8);
+
+  font-family: 'Cabin Sketch', sans-serif;
+  color: rgba(245, 245, 245, 0.8);
+
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.name.input:focus {
+  outline: none;
+}
+
+#continueBtn {
+  background: none;
+  border: none;
+
+  font-family: 'Cabin Sketch', sans-serif;
+  color: rgba(245, 245, 245, 0.8);
+
+  font-size: 3rem;
   cursor: pointer;
 }
