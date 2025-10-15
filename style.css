@@ -115,6 +115,9 @@ body {
 
 /* Style */
 
-.body {
-  
+body {
+  background-image: url(img/background-tictactoe.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
